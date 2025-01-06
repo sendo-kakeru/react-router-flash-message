@@ -1,9 +1,9 @@
 {
 	/* Change to `@total-typescript/tsconfig/tsc/dom/library` for DOM usage */
-	"extends": "@total-typescript/tsconfig/bundler/dom/app",
+	"extends": "@total-typescript/tsconfig/tsc/dom/library",
 	"include": ["src/**/*"],
-	"exclude": ["src/**/*.test.*"],
 	"compilerOptions": {
-		"outDir": "./build"
+		"outDir": "./dist",
+		"verbatimModuleSyntax": false
 	}
 }
