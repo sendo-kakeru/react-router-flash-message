@@ -1,16 +1,13 @@
-import { sessionStorage } from "~/libs/session-storage.server";
+import { flashMessage } from "~/libs/flash-message";
 import type { Route } from "./+types/flash-message.success";
 import { redirect } from "react-router";
 
 export async function loader({ request }: Route.LoaderArgs) {
-	const session = await sessionStorage.getSession(
-		request.headers.get("Cookie"),
-	);
-	session.flash("flashMessage", {
-		color: "danger",
-		message: "failed!!",
+	const { cookie } = await flashMessage.set({
+		request,
+		data: { color: "danger", message: "failed!!" },
 	});
 	return redirect("/", {
-		headers: { "Set-Cookie": await sessionStorage.commitSession(session) },
+		headers: { "Set-Cookie": cookie },
 	});
 }

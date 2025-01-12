@@ -13,7 +13,7 @@ import {
 import type { Route } from "./+types/root";
 import stylesheet from "./styles/app.css?url";
 import { NextUIProvider } from "@nextui-org/react";
-import { sessionStorage } from "./libs/session-storage.server";
+import { flashMessage } from "./libs/flash-message";
 import FlashMessage from "./components/FlashMessage";
 
 export const links: Route.LinksFunction = () => [
@@ -31,15 +31,15 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export async function loader({ request }: Route.LoaderArgs) {
-	const session = await sessionStorage.getSession(
-		request.headers.get("Cookie"),
-	);
+	const { data: flashMessageData, cookie } = await flashMessage.get({
+		request,
+	});
 	return data(
 		{
-			flashMessage: { ...session.get("flashMessage"), key: Date.now() },
+			flashMessage: { ...flashMessageData, key: Date.now() },
 		},
 		{
-			headers: { "Set-Cookie": await sessionStorage.commitSession(session) },
+			headers: { "Set-Cookie":cookie },
 		},
 	);
 }
@@ -67,7 +67,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App({ loaderData }: Route.ComponentProps) {
 	return (
-		<>
+		<div className="mx-auto max-w-5xl relative">
 			{loaderData.flashMessage && (
 				<FlashMessage
 					color={loaderData.flashMessage.color}
@@ -76,7 +76,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
 				/>
 			)}
 			<Outlet />
-		</>
+		</div>
 	);
 }
 

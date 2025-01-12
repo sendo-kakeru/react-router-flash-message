@@ -19,7 +19,7 @@ export default function FlashMessage({ title, ...props }: AlertProps) {
 		<Alert
 			{...{ ...props, title }}
 			classNames={{
-				base: `z-50 fixed left-1/2 -translate-x-1/2 duration-700 ease-in-out ${isVisible ? "top-0" : "-top-[50vh]"}`,
+				base: `z-50 absolute left-1/2 -translate-x-1/2 duration-700 ease-in-out w-full ${isVisible ? "top-0" : "-top-[50vh]"}`,
 			}}
 		/>
 	);
