@@ -36,10 +36,12 @@ export async function loader({ request }: Route.LoaderArgs) {
 	});
 	return data(
 		{
-			flashMessage: { ...flashMessageData, key: Date.now() },
+			flashMessage: flashMessageData
+				? { ...flashMessageData, key: Date.now() }
+				: undefined,
 		},
 		{
-			headers: { "Set-Cookie":cookie },
+			headers: { "Set-Cookie": cookie },
 		},
 	);
 }

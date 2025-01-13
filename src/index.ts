@@ -1,52 +1,49 @@
 import type { Session, SessionStorage } from "react-router";
 
-export class FlashMessage<S extends Record<string, unknown>> {
-	public session?: Session<S>;
-	private messageKey: keyof S & string;
-	private sessionStorage: SessionStorage<S>;
+export class FlashMessage<T extends Record<string, unknown>> {
+	private sessionKey: keyof T & string;
+	private sessionStorage: SessionStorage<T>;
 
 	constructor({
 		sessionStorage,
-		messageKey,
+		sessionKey,
 	}: {
-		sessionStorage: SessionStorage<S>;
-		messageKey: keyof S & string;
+		sessionStorage: SessionStorage<T>;
+		sessionKey: keyof T & string;
 	}) {
-		this.messageKey = messageKey;
+		this.sessionKey = sessionKey;
 		this.sessionStorage = sessionStorage;
 	}
 
-	public async updateSession(request: Request) {
-		this.session = await this.sessionStorage.getSession(
+	public async get({ request }: { request: Request }): Promise<{
+		data:
+			| (keyof T & string extends keyof T ? T[keyof T & string] : undefined)
+			| undefined;
+		cookie: string;
+	}> {
+		const session = await this.sessionStorage.getSession(
 			request.headers.get("Cookie"),
 		);
+		return {
+			data: session.get(this.sessionKey),
+			cookie: await this.commit(session),
+		};
 	}
 
-	private sessionExistGuard(session?: Session<S>): asserts session {
-		console.log("session", session);
-		// Todo: sessionが空の場合もfalse判定にならないかテスト
-		if (!session) {
-			throw new Error(
-				"The session has not been initialized. Please call `updateSession` first.",
-			);
-		}
+	public async set({
+		request,
+		data,
+	}: { request: Request; data: T[keyof T & string] }): Promise<{
+		cookie: string;
+	}> {
+		const session = await this.sessionStorage.getSession(
+			request.headers.get("Cookie"),
+		);
+		session.flash(this.sessionKey, data);
+		return { cookie: await this.commit(session) };
 	}
 
-	public async get():Promise<
-		| (keyof S & string extends keyof S ? S[keyof S & string] : undefined)
-		| undefined> {
-		this.sessionExistGuard(this.session);
-		const cookie = await this.commit()
-		return this.session.get(this.messageKey);
-	}
-
-	public set(message: S[keyof S & string]): void {
-		this.sessionExistGuard(this.session);
-		this.session.flash(this.messageKey, message);
-	}
-
-	private commit(): Promise<Cookie> {
-		this.sessionExistGuard(this.session);
-		return this.sessionStorage.commitSession(this.session);
+	private commit(session: Session<T>): Promise<string> {
+		return this.sessionStorage.commitSession(session);
 	}
 }

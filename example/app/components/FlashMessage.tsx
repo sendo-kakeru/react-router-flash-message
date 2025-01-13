@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, type AlertProps } from "@nextui-org/react";
 
-export default function FlashMessage({ title, ...props }: AlertProps) {
+export default function FlashMessage(props: AlertProps) {
 	const [isTimeOut, setIsTimeOut] = useState(false);
 	useEffect(() => {
 		setIsTimeOut(true);
@@ -13,13 +13,11 @@ export default function FlashMessage({ title, ...props }: AlertProps) {
 		};
 	}, []);
 
-	const isVisible = title ? isTimeOut : false;
-
 	return (
 		<Alert
-			{...{ ...props, title }}
+			{...props}
 			classNames={{
-				base: `z-50 absolute left-1/2 -translate-x-1/2 duration-700 ease-in-out w-full ${isVisible ? "top-0" : "-top-[50vh]"}`,
+				base: `z-50 absolute left-1/2 -translate-x-1/2 duration-700 ease-in-out w-full ${isTimeOut ? "top-0" : "-top-[50vh]"}`,
 			}}
 		/>
 	);
