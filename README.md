@@ -10,7 +10,7 @@ React Router Flash Message is a complete open-source authentication solution for
 To use it, install it from npm (or yarn or pnpm):
 
 ```bash
-npm install remix-auth
+npm i remix-auth
 ```
 
 ## Usage
