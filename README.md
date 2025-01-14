@@ -122,3 +122,11 @@ export default function App({ loaderData }: Route.ComponentProps) {
 <!-- ## Advanced Usage -->
 
 <!-- ### プロジェクト全体に設定する -->
+
+## License
+
+See [LICENSE](./LICENSE).
+
+## Author
+
+- [Sendo Kakeru](https://github.com/sendo-kakeru)
