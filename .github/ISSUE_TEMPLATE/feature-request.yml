@@ -20,9 +20,6 @@ body:
     id: example-code
     attributes:
       label: Example Code
-      value: |
-        ```ts
-        ```
     validations:
       required: false
   - type: textarea

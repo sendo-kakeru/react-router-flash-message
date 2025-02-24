@@ -12,18 +12,24 @@ body:
     validations:
       required: true
   - type: textarea
-    id: how-to-reproduce
+    id: steps
     attributes:
-      label: How to reproduce
-      value: |
+      label: Steps to Reproduce the Bug or Issue
+      description: Describe the steps we have to take to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
     validations:
       required: true
   - type: textarea
     id: expected-behaviour
     attributes:
       label: Expected behaviour
-    validations:
-      required: true
+      description: Provide a clear and concise description of what you expected to happen.
+      placeholder: |
+        As a user, I expected ___ behavior but i am seeing ___
   - type: textarea
     id: actual-behaviour
     attributes:
