@@ -1,7 +1,9 @@
-name: '🐛 Bug report'
+name: Support Request
 description: |
-  Please report the bug.
-  If you're not sure if it's a bug or not, please use the template `Support Request` instead.
+  Please use this template when you face any problem (not bug) and need our help.
+  If you're not sure if it's a bug or not, please use this template.
+labels:
+  - support-request
 body:
   - type: textarea
     id: overview
@@ -28,8 +30,6 @@ body:
       description: Provide a clear and concise description of what you expected to happen.
       placeholder: |
         As a user, I expected ___ behavior but i am seeing ___
-    validations:
-      required: true
   - type: textarea
     id: actual-behaviour
     attributes:
