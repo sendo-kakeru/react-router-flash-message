@@ -108,4 +108,20 @@ describe("FlashMessage", () => {
 
 		expect(secondData).toBeUndefined();
 	});
+
+	it("should return undefined if no flash message is set", async () => {
+		const request = new Request("http://localhost", {
+			headers: { Cookie: "" },
+		});
+		const { data } = await flashMessage.get({ request });
+		expect(data).toBeUndefined();
+	});
+
+	it("should handle invalid session cookie gracefully", async () => {
+		const request = new Request("http://localhost", {
+			headers: { Cookie: "invalid=session-data" },
+		});
+		const result = await flashMessage.get({ request });
+		expect(result.data).toBeUndefined();
+	});
 });
