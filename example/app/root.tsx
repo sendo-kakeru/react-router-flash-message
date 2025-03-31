@@ -10,7 +10,7 @@ import {
 	useNavigate,
 } from "react-router";
 
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import type { Route } from "./+types/root";
 import FlashMessage from "./components/FlashMessage";
 import { flashMessage } from "./libs/flash-message";
@@ -57,9 +57,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Links />
 			</head>
 			<body>
-				<NextUIProvider navigate={navigate} useHref={useHref}>
+				<HeroUIProvider navigate={navigate} useHref={useHref}>
 					{children}
-				</NextUIProvider>
+				</HeroUIProvider>
 				<ScrollRestoration />
 				<Scripts />
 			</body>

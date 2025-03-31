@@ -1,4 +1,4 @@
-import type { AlertProps } from "@nextui-org/react";
+import type { AlertProps } from "@heroui/react";
 import { createCookieSessionStorage } from "react-router";
 import { FlashMessage } from "react-router-flash-message";
 

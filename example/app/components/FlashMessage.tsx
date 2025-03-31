@@ -1,4 +1,4 @@
-import { Alert, type AlertProps } from "@nextui-org/react";
+import { Alert, type AlertProps } from "@heroui/react";
 import { useEffect, useState } from "react";
 
 export default function FlashMessage(props: AlertProps) {
