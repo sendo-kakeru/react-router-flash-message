@@ -1,20 +1,20 @@
 import {
-	data,
-	isRouteErrorResponse,
 	Links,
 	Meta,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	data,
+	isRouteErrorResponse,
 	useHref,
 	useNavigate,
 } from "react-router";
 
-import type { Route } from "./+types/root";
-import stylesheet from "./styles/app.css?url";
 import { NextUIProvider } from "@nextui-org/react";
-import { flashMessage } from "./libs/flash-message";
+import type { Route } from "./+types/root";
 import FlashMessage from "./components/FlashMessage";
+import { flashMessage } from "./libs/flash-message";
+import stylesheet from "./styles/app.css?url";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
