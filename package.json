@@ -9,7 +9,7 @@
 		"build": "tsc",
 		"typecheck": "tsc --noEmit",
 		"prepare": "npm run build",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "vitest"
 	},
 	"keywords": [
 		"react",
@@ -43,7 +43,9 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
+		"@nextui-org/react": "2.6.11",
 		"@total-typescript/tsconfig": "^1.0.4",
-		"typescript": "^5.7.3"
+		"typescript": "^5.7.3",
+		"vitest": "^3.0.6"
 	}
 }
