@@ -30,3 +30,6 @@ jobs:
 
       - name: Run tests
         run: pnpm test
+
+      - name: Run Biome check
+        run: pnpm check:ci

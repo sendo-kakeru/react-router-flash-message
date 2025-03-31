@@ -1,7 +1,7 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import { createCookieSessionStorage } from "react-router";
-import { FlashMessage } from ".";
 import type { AlertProps } from "@nextui-org/react";
+import { createCookieSessionStorage } from "react-router";
+import { beforeEach, describe, expect, it } from "vitest";
+import { FlashMessage } from ".";
 
 const FLASH_MESSAGE_SESSION_KEY = "flash_message";
 

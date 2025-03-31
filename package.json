@@ -9,14 +9,11 @@
 		"build": "tsc",
 		"typecheck": "tsc --noEmit",
 		"prepare": "npm run build",
-		"test": "vitest"
+		"test": "vitest",
+		"check": "biome check --apply .",
+		"check:ci": "biome ci ."
 	},
-	"keywords": [
-		"react",
-		"react router",
-		"remix",
-		"flash message"
-	],
+	"keywords": ["react", "react router", "remix", "flash message"],
 	"author": {
 		"name": "sendo-kakeru",
 		"email": "sendokakeru.js@gmail.com",
@@ -30,12 +27,7 @@
 	"bugs": {
 		"url": "https://github.com/sendo-kakeru/react-router-flash-message/issues"
 	},
-	"files": [
-		"dist",
-		"src",
-		"package.json",
-		"README.md"
-	],
+	"files": ["dist", "src", "package.json", "README.md"],
 	"homepage": "https://github.com/sendo-kakeru/react-router-flash-message",
 	"packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321",
 	"dependencies": {
