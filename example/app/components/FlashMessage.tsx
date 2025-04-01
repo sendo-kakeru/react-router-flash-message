@@ -1,5 +1,5 @@
+import { Alert, type AlertProps } from "@heroui/react";
 import { useEffect, useState } from "react";
-import { Alert, type AlertProps } from "@nextui-org/react";
 
 export default function FlashMessage(props: AlertProps) {
 	const [isTimeOut, setIsTimeOut] = useState(false);
