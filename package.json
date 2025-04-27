@@ -1,6 +1,6 @@
 {
 	"name": "react-router-flash-message",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Simple Flash Message for React Router apps.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -35,7 +35,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@heroui/react": "2.7.5",
+		"@heroui/react": "2.7.6",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"typescript": "^5.7.3",
 		"vitest": "^3.0.6"
