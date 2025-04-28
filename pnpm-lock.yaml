@@ -10,7 +10,7 @@ importers:
     dependencies:
       react-router:
         specifier: ^7.2.0
-        version: 7.5.2(react-dom@19.1.0(react@19.0.0))(react@19.0.0)
+        version: 7.5.3(react-dom@19.1.0(react@19.0.0))(react@19.0.0)
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
@@ -1583,8 +1583,8 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-router@7.5.2:
-    resolution: {integrity: sha512-9Rw8r199klMnlGZ8VAsV/I8WrIF6IyJ90JQUdboupx1cdkgYqwnrYjH+I/nY/7cA1X5zia4mDJqH36npP7sxGQ==}
+  react-router@7.5.3:
+    resolution: {integrity: sha512-3iUDM4/fZCQ89SXlDa+Ph3MevBrozBAI655OAfWQlTm9nBR0IKlrmNwFow5lPHttbwvITZfkeeeZFP6zt3F7pw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -4099,7 +4099,7 @@ snapshots:
       react: 19.0.0
       scheduler: 0.26.0
 
-  react-router@7.5.2(react-dom@19.1.0(react@19.0.0))(react@19.0.0):
+  react-router@7.5.3(react-dom@19.1.0(react@19.0.0))(react@19.0.0):
     dependencies:
       cookie: 1.0.2
       react: 19.0.0
