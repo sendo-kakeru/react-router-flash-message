@@ -4,11 +4,13 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: 'weekly'
+      day: 'sunday'
     reviewers:
       - "sendo-kakeru"
     assignees:
       - "sendo-kakeru"
+    open-pull-requests-limit: 20
 
   - package-ecosystem: npm
     directory: /
@@ -18,3 +20,24 @@ updates:
       - "sendo-kakeru"
     assignees:
       - "sendo-kakeru"
+
+  - package-ecosystem: npm
+    directory: /example
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "sendo-kakeru"
+    assignees:
+      - "sendo-kakeru"
+    groups:
+      react:
+        patterns:
+          - react
+          - react-dom
+          - '@types/react'
+          - '@types/react-dom'
+      react-router:
+        patterns:
+          - react-router
+          - '@types/react-router'
+          - '@react-router/*'
