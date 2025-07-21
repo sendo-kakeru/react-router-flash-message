@@ -4,25 +4,20 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: 'weekly'
-      day: 'sunday'
+      interval: "weekly"
+      day: "sunday"
     reviewers:
       - "sendo-kakeru"
     assignees:
       - "sendo-kakeru"
     open-pull-requests-limit: 20
+    ignore:
+      - dependency-name: 'react-router-flash-message'
 
   - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: "weekly"
-    reviewers:
-      - "sendo-kakeru"
-    assignees:
-      - "sendo-kakeru"
-
-  - package-ecosystem: npm
-    directory: /example
+    directories:
+      - /
+      - /example
     schedule:
       interval: "weekly"
     reviewers:
@@ -34,10 +29,10 @@ updates:
         patterns:
           - react
           - react-dom
-          - '@types/react'
-          - '@types/react-dom'
+          - "@types/react"
+          - "@types/react-dom"
       react-router:
         patterns:
           - react-router
-          - '@types/react-router'
-          - '@react-router/*'
+          - "@types/react-router"
+          - "@react-router/*"
