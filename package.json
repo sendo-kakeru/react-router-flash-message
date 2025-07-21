@@ -10,10 +10,16 @@
 		"typecheck": "tsc --noEmit",
 		"prepare": "npm run build",
 		"test": "vitest",
-		"check": "biome check --apply .",
-		"check:ci": "biome ci ."
+		"lint": "biome check .",
+		"format": "biome check --fix --unsafe .",
+		"ci": "biome ci . && npm run typecheck && vitest run"
 	},
-	"keywords": ["react", "react router", "remix", "flash message"],
+	"keywords": [
+		"react",
+		"react router",
+		"remix",
+		"flash message"
+	],
 	"author": {
 		"name": "sendo-kakeru",
 		"email": "sendokakeru.js@gmail.com",
@@ -27,14 +33,19 @@
 	"bugs": {
 		"url": "https://github.com/sendo-kakeru/react-router-flash-message/issues"
 	},
-	"files": ["dist", "src", "package.json", "README.md"],
+	"files": [
+		"dist",
+		"src",
+		"package.json",
+		"README.md"
+	],
 	"homepage": "https://github.com/sendo-kakeru/react-router-flash-message",
 	"packageManager": "pnpm@10.9.0",
 	"dependencies": {
 		"react-router": "^7.2.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "^2.1.2",
 		"@heroui/react": "2.7.10",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"typescript": "^5.7.3",

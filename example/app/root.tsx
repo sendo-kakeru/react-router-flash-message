@@ -1,16 +1,15 @@
+import { HeroUIProvider } from "@heroui/react";
 import {
+	data,
+	isRouteErrorResponse,
 	Links,
 	Meta,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
-	data,
-	isRouteErrorResponse,
 	useHref,
 	useNavigate,
 } from "react-router";
-
-import { HeroUIProvider } from "@heroui/react";
 import type { Route } from "./+types/root";
 import FlashMessage from "./components/FlashMessage";
 import { flashMessage } from "./libs/flash-message";
@@ -52,7 +51,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		<html lang="en">
 			<head>
 				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta content="width=device-width, initial-scale=1" name="viewport" />
 				<Meta />
 				<Links />
 			</head>
@@ -73,8 +72,8 @@ export default function App({ loaderData }: Route.ComponentProps) {
 			{loaderData.flashMessage && (
 				<FlashMessage
 					color={loaderData.flashMessage.color}
-					title={loaderData.flashMessage.message}
 					key={loaderData.flashMessage.key}
+					title={loaderData.flashMessage.message}
 				/>
 			)}
 			<Outlet />

@@ -33,7 +33,10 @@ export class FlashMessage<T extends Record<string, unknown>> {
 	public async set({
 		request,
 		data,
-	}: { request: Request; data: T[keyof T & string] }): Promise<{
+	}: {
+		request: Request;
+		data: T[keyof T & string];
+	}): Promise<{
 		cookie: string;
 	}> {
 		const session = await this.sessionStorage.getSession(
