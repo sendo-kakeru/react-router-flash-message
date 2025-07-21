@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "^2.2.0",
-		"@heroui/react": "2.7.5",
+		"@heroui/react": "2.8.1",
 		"@react-router/fs-routes": "^7.4.1",
 		"@react-router/node": "^7.4.1",
 		"@react-router/serve": "^7.4.1",
