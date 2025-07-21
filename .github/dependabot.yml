@@ -11,6 +11,8 @@ updates:
     assignees:
       - "sendo-kakeru"
     open-pull-requests-limit: 20
+    ignore:
+      - dependency-name: 'react-router-flash-message'
 
   - package-ecosystem: npm
     directories:
