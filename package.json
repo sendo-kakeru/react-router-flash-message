@@ -1,54 +1,54 @@
 {
-	"name": "react-router-flash-message",
-	"version": "0.2.2",
-	"description": "Simple Flash Message for React Router apps.",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"sideEffects": false,
-	"scripts": {
-		"build": "tsc",
-		"typecheck": "tsc --noEmit",
-		"prepare": "npm run build",
-		"test": "vitest",
-		"lint": "biome check .",
-		"format": "biome check --fix --unsafe .",
-		"ci": "biome ci . && npm run typecheck && vitest run"
-	},
-	"keywords": [
-		"react",
-		"react router",
-		"remix",
-		"flash message"
-	],
-	"author": {
-		"name": "sendo-kakeru",
-		"email": "sendokakeru.js@gmail.com",
-		"url": "https://github.com/sendo-kakeru"
-	},
-	"repository": {
-		"url": "https://github.com/sendo-kakeru/react-router-flash-message",
-		"type": "git"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/sendo-kakeru/react-router-flash-message/issues"
-	},
-	"files": [
-		"dist",
-		"src",
-		"package.json",
-		"README.md"
-	],
-	"homepage": "https://github.com/sendo-kakeru/react-router-flash-message",
-	"packageManager": "pnpm@10.9.0",
-	"dependencies": {
-		"react-router": "^7.7.0"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "^2.1.2",
-		"@heroui/react": "2.8.1",
-		"@total-typescript/tsconfig": "^1.0.4",
-		"typescript": "^5.7.3",
-		"vitest": "^3.0.6"
-	}
+  "name": "react-router-flash-message",
+  "version": "0.2.2",
+  "description": "Simple Flash Message for React Router apps.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build",
+    "test": "vitest",
+    "lint": "biome check .",
+    "format": "biome check --fix --unsafe .",
+    "ci": "biome ci . && npm run typecheck && vitest run"
+  },
+  "keywords": [
+    "react",
+    "react router",
+    "remix",
+    "flash message"
+  ],
+  "author": {
+    "name": "sendo-kakeru",
+    "email": "sendokakeru.js@gmail.com",
+    "url": "https://github.com/sendo-kakeru"
+  },
+  "repository": {
+    "url": "https://github.com/sendo-kakeru/react-router-flash-message",
+    "type": "git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sendo-kakeru/react-router-flash-message/issues"
+  },
+  "files": [
+    "dist",
+    "src",
+    "package.json",
+    "README.md"
+  ],
+  "homepage": "https://github.com/sendo-kakeru/react-router-flash-message",
+  "packageManager": "pnpm@10.9.0",
+  "dependencies": {
+    "react-router": "^7.7.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.1.2",
+    "@heroui/react": "2.8.1",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.0.6"
+  }
 }
