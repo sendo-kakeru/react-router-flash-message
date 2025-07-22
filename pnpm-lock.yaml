@@ -25,7 +25,7 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       vitest:
-        specifier: ^3.0.6
+        specifier: ^3.2.4
         version: 3.2.4
 
 packages:
